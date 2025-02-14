@@ -1,12 +1,12 @@
 # Sync folders script
 > [!NOTE]  
 > This script is designed to make it easier to sync between folders on macOS.  
-
+  
 > [!CAUTION] 
 > This version is still poorly tested, so do not use it for folders with important data.  
-
+  
 First, change the paths of the folders you want to sync.  
-
+  
 `source_posts` is a variable storing the path to the folder with the source files.  
 In my case I'm using a folder in [Obsidian](https://obsidian.md/) vault that's locate on my iCloud drive.  
 ```
@@ -17,16 +17,22 @@ For example:
 ```
 source_posts=~/YOUR-FOLDER/YOUR-POSTS-FOLDER
 ```
-
-
+  
+  
 `target_posts` is a variable storing the path to the folder with the target files.
 ```
 target_posts=~/YOUR-LOCAL-REPO/YOUR-POSTS
 ```
-
+  
 I use the 'POSTS-FOLDER' formula because I use this script to sync my [Obsidian](https://obsidian.md/) notes with my blog repository.  
-
+  
 The same applies to `source_media` and `target_media`  
-
+    
 The script works by checking the contents of the 'target' folder and comparing it with the 'source' folder, if the 'source' folder contains files that are not in the 'target' folder it copies them to it.  
-
+  
+To make a file executable you need to give it the executable attribute by entering this command into the terminal: `chmod +x folder-sync.sh`   
+  
+To run the script, type in the terminal: `bash folder-sync.sh`  
+if everything went well you should see the following message: `Copy operation completed.`   
+  
+By running the commands: `chmod +x folder-sync.sh` and `bash folder-sync.sh` you must be in the folder with the `folder-sync.sh` file.   
